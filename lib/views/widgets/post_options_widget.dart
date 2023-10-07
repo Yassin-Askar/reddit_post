@@ -17,38 +17,40 @@ class PostOptions extends StatefulWidget {
 class _PostOptionsState extends State<PostOptions> {
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.bottomRight,
-      heightFactor: 2,
-      child: Container(
-        height: 300,
-        width: 70,
-        child: Column(
-          children: [
-            const Expanded(flex: 2, child: VotingWidget()),
-            Expanded(
-              child: IconButton(
-                onPressed: widget.onPressed,
-                icon: SvgPicture.asset(
-                  iconComment,
-                  width: 40,
-                  theme: iconTheme,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 40),
+      child: Align(
+        alignment: Alignment.bottomRight,
+        child: Container(
+          height: 300,
+          width: 70,
+          child: Column(
+            children: [
+              const Expanded(flex: 2, child: VotingWidget()),
+              Expanded(
+                child: IconButton(
+                  onPressed: widget.onPressed,
+                  icon: SvgPicture.asset(
+                    iconComment,
+                    width: 40,
+                    theme: iconTheme,
+                  ),
                 ),
               ),
-            ),
-            Expanded(
-              child: IconButton(
-                onPressed: () {
-                  Share.share('cat post on reddit ', subject: 'reddit!');
-                },
-                icon: SvgPicture.asset(
-                  iconShare,
-                  width: 40,
-                  theme: iconTheme,
+              Expanded(
+                child: IconButton(
+                  onPressed: () {
+                    Share.share('cat post on reddit ', subject: 'reddit!');
+                  },
+                  icon: SvgPicture.asset(
+                    iconShare,
+                    width: 40,
+                    theme: iconTheme,
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

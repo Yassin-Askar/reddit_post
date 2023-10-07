@@ -40,10 +40,11 @@ class _PostScreenState extends State<PostScreen> {
             },
           ),
           const PostAppBarWidget(),
-          const Align(
-              heightFactor: 6.1,
-              alignment: Alignment.bottomLeft,
-              child: PostUserInfo()),
+          const Padding(
+            padding: EdgeInsets.only(bottom: 28),
+            child:
+                Align(alignment: Alignment.bottomLeft, child: PostUserInfo()),
+          ),
         ],
       ),
     );
